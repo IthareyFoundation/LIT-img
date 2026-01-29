@@ -1,0 +1,20 @@
+---
+layout: null
+---
+[
+{% assign image_files = site.static_files %}
+{% assign first = true %}
+{% for file in image_files %}
+  {% if file.extname == '.png' or file.extname == '.jpg' or file.extname == '.jpeg' %}
+  {% if first == false %},{% endif %}
+  {
+    "lemma": "{{ file.basename }}",
+    "path": "https://ithareyfoundation.github.io/LIT-img{{ file.path }}",
+    "name": "{{ file.name }}",
+    "extension": "{{ file.extname }}",
+    "modified": "{{ file.modified_time | date: '%Y-%m-%d' }}"
+  }
+  {% assign first = false %}
+  {% endif %}
+{% endfor %}
+]
