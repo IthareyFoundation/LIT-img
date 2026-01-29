@@ -1,0 +1,9 @@
+# _config.yml
+title: LIT Image Files
+description: Images for Judean Lexicon
+
+# Include image files in Jekyll build
+include:
+  - "*.png"
+  - "*.jpg"
+  - "*.jpeg"
